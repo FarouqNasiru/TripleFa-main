@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,17 @@
     <style>
         /* === Base Styles === */
         :root {
-            --primary: #ff6b6b;
+            --primary: #404145;
             --dark: #222;
             --light: #f8f9fa;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             display: flex;
@@ -26,7 +27,7 @@
             position: relative;
             background: var(--light);
         }
-        
+
         /* === Mobile Menu Button === */
         .mobile-menu-btn {
             display: none;
@@ -42,9 +43,9 @@
             border-radius: 50%;
             font-size: 1.5rem;
             cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
-        
+
         /* === Sidebar === */
         .sidebar {
             width: 300px;
@@ -58,30 +59,30 @@
             transition: transform 0.3s ease;
             z-index: 900;
         }
-        
+
         .sidebar h2 {
             color: var(--dark);
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
         }
-        
+
         .option-group {
             margin-bottom: 1.5rem;
             padding-bottom: 1.5rem;
             border-bottom: 1px solid #eee;
         }
-        
+
         .option-group:last-child {
             border-bottom: none;
         }
-        
+
         .option-group label {
             display: block;
             margin-bottom: 0.8rem;
             font-weight: 600;
             color: #555;
         }
-        
+
         select {
             width: 100%;
             padding: 0.8rem;
@@ -90,14 +91,14 @@
             margin-bottom: 1rem;
             font-family: 'Poppins', sans-serif;
         }
-        
+
         .color-options {
             display: flex;
             gap: 0.8rem;
             flex-wrap: wrap;
             margin-bottom: 1rem;
         }
-        
+
         .color-option {
             width: 40px;
             height: 40px;
@@ -106,31 +107,31 @@
             border: 3px solid transparent;
             transition: all 0.3s ease;
         }
-        
+
         .color-option.selected {
             border-color: var(--primary);
             transform: scale(1.1);
         }
-        
+
         .feature-checkboxes {
             display: flex;
             flex-direction: column;
             gap: 0.8rem;
         }
-        
+
         .feature-option {
             display: flex;
             align-items: center;
             gap: 0.8rem;
             cursor: pointer;
         }
-        
+
         .feature-option input {
             width: 18px;
             height: 18px;
             accent-color: var(--primary);
         }
-        
+
         /* === Main Content === */
         .main-content {
             flex: 1;
@@ -140,7 +141,7 @@
             align-items: center;
             transition: margin-left 0.3s ease;
         }
-        
+
         .door-display-container {
             position: relative;
             width: 100%;
@@ -149,16 +150,16 @@
             background: white;
             padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
-        
+
         .door-base {
             width: 100%;
             height: auto;
             display: block;
             border-radius: 4px;
         }
-        
+
         /* Feature layers - initially hidden */
         .door-feature {
             position: absolute;
@@ -171,11 +172,11 @@
             pointer-events: none;
             border-radius: 4px;
         }
-        
+
         .door-feature.active {
             opacity: 1;
         }
-        
+
         /* Price display */
         .price-display {
             font-size: 1.8rem;
@@ -185,9 +186,9 @@
             background: white;
             padding: 1rem 2rem;
             border-radius: 50px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         /* Feature list */
         .selected-features {
             width: 100%;
@@ -195,26 +196,26 @@
             background: white;
             border-radius: 12px;
             padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             margin-bottom: 2rem;
         }
-        
+
         .selected-features h3 {
             margin-bottom: 1rem;
             color: var(--dark);
         }
-        
+
         .feature-list {
             list-style: none;
         }
-        
+
         .feature-list li {
             display: flex;
             justify-content: space-between;
             padding: 0.6rem 0;
             border-bottom: 1px solid #eee;
         }
-        
+
         /* Buttons */
         .btn {
             padding: 1rem 2rem;
@@ -226,18 +227,18 @@
             border: none;
             font-family: 'Poppins', sans-serif;
         }
-        
+
         .btn-primary {
             background: var(--primary);
             color: white;
         }
-        
+
         .btn-primary:hover {
             background: #ff5252;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
         }
-        
+
         /* === Responsive === */
         @media (max-width: 992px) {
             .mobile-menu-btn {
@@ -245,7 +246,7 @@
                 align-items: center;
                 justify-content: center;
             }
-            
+
             .sidebar {
                 position: fixed;
                 top: 0;
@@ -253,22 +254,22 @@
                 transform: translateX(-100%);
                 height: 100vh;
                 z-index: 900;
-                box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+                box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
             }
-            
+
             .sidebar.active {
                 transform: translateX(0);
             }
-            
+
             .main-content {
                 margin-left: 0;
                 padding-top: 6rem;
             }
-            
+
             .door-display-container {
                 padding: 1.5rem;
             }
-            
+
             .door-feature {
                 top: 1.5rem;
                 left: 1.5rem;
@@ -278,40 +279,45 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Mobile Menu Button -->
     <button class="mobile-menu-btn" id="menuBtn">☰</button>
-    
+
     <!-- Overlay (for mobile) -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    
+
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
         <h2>Customize Your Door</h2>
-        
+
         <div class="customization-options">
             <div class="option-group">
                 <label>Door Model</label>
                 <select id="door-model">
-                    <option value="basic">Flush High Density fibre Doors</option>
-                    <option value="premium">Panel High Density fibre Doors</option>
-                    <option value="luxury">Pivot Doors</option>
-                     <option value="luxury">Sliding/Foldable Doors</option>
-                    <option value="luxury">Double Leaf Doors</option>
-                    <option value="luxury">Polished Timber Doors</option>
+                    <option value="basic" data-base="Images/black door.png">Flush High Density fibre Doors</option>
+                    <option value="premium" data-base="Images/panel-door.jpg">Panel High Density fibre Doors</option>
+                    <option value="luxury" data-base="Images/.jpg">Pivot Doors</option>
+                    <option value="sliding" data-base="Images/sliding-door.jpg">Sliding/Foldable Doors</option>
+                    <option value="double" data-base="Images/double-door.webp">Double Leaf Doors</option>
+                    <option value="timber" data-base="Images/door2.jpg">Polished Timber Doors</option>
                 </select>
             </div>
-            
+
             <div class="option-group">
                 <label>Color Finish</label>
                 <div class="color-options">
-                    <div class="color-option selected" style="background: #8B4513;" data-color="brown" data-feature="color-brown"></div>
-                    <div class="color-option" style="background: #333;" data-color="black" data-feature="color-black"></div>
-                    <div class="color-option" style="background: #C0C0C0;" data-color="gray" data-feature="color-gray"></div>
-                    <div class="color-option" style="background: #FFF; border: 1px solid #eee;" data-color="white" data-feature="color-white"></div>
+                    <div class="color-option selected" style="background: #8B4513;" data-color="brown"
+                        data-feature="color-brown"></div>
+                    <div class="color-option" style="background: #333;" data-color="black" data-feature="color-black">
+                    </div>
+                    <div class="color-option" style="background: #C0C0C0;" data-color="gray" data-feature="color-gray">
+                    </div>
+                    <div class="color-option" style="background: #FFF; border: 1px solid #eee;" data-color="white"
+                        data-feature="color-white"></div>
                 </div>
             </div>
-            
+
             <div class="option-group">
                 <label>Security Features</label>
                 <div class="feature-checkboxes">
@@ -326,7 +332,7 @@
                     </label>
                 </div>
             </div>
-            
+
             <div class="option-group">
                 <label>Glass Inserts</label>
                 <select id="glass-type" data-feature="glass">
@@ -334,9 +340,12 @@
                     <option value="clear">Clear Tempered Glass</option>
                     <option value="frosted">Frosted Glass</option>
                     <option value="decorative">Tinted Glass</option>
+                    <option value="shinted">Short Tinted Glass</option>
+                    <option value="shear">Short Clear Glass</option>
+                    <option value="shosted">Short Frosted Glass</option>
                 </select>
             </div>
-            
+
             <div class="option-group">
                 <label>Additional Features</label>
                 <div class="feature-checkboxes">
@@ -350,46 +359,55 @@
                         <input type="checkbox" data-feature="smart-lock"> Smart Lock Handle
                     </label>
                     <label class="feature-option">
-                        <input type="checkbox" data-feature="smart-lock"> Pull Handle
+                        <input type="checkbox" data-feature="pull-handle"> Pull Handle
+                    </label>
+                    <label class="feature-option">
+                        <input type="checkbox" data-feature="door-frame"> Door Frame
                     </label>
                 </div>
             </div>
         </div>
     </aside>
-    
+
     <!-- Main Content -->
     <main class="main-content">
         <div class="door-display-container">
             <!-- Base door image (always visible) -->
-            <img src="https://via.placeholder.com/500x800/DDD/CCC?text=Basic+Door" alt="Basic Door" class="door-base" id="baseDoor">
-            
+            <img src="Images/black door.png" alt="Basic Door" class="door-base" id="baseDoor">
+
             <!-- Feature overlay images (hidden by default) -->
-            <img src="https://via.placeholder.com/500x800/8B4513/000?text=Brown+Finish&opacity=0.7" class="door-feature" id="color-brown" alt="Brown Finish">
-            <img src="https://via.placeholder.com/500x800/333/000?text=Black+Finish&opacity=0.7" class="door-feature" id="color-black" alt="Black Finish">
-            <img src="https://via.placeholder.com/500x800/C0C0C0/000?text=Gray+Finish&opacity=0.7" class="door-feature" id="color-gray" alt="Gray Finish">
-            <img src="https://via.placeholder.com/500x800/FFF/000?text=White+Finish&opacity=0.7" class="door-feature" id="color-white" alt="White Finish">
-            
-            <img src="https://via.placeholder.com/500x800/000/FFF?text=Multi-Lock" class="door-feature" id="multi-lock" alt="Multi-Point Locking">
-            <img src="https://via.placeholder.com/500x800/000/FFF?text=Anti-Drill" class="door-feature" id="anti-drill" alt="Anti-Drill Plates">
-            <img src="https://via.placeholder.com/500x800/000/FFF?text=Reinforced" class="door-feature" id="reinforced" alt="Reinforced Hinges">
-            <img src="https://via.placeholder.com/500x800/FFF/000?text=Clear+Glass" class="door-feature" id="glass-clear" alt="Clear Glass">
-            <img src="https://via.placeholder.com/500x800/FFF/000?text=Frosted+Glass" class="door-feature" id="glass-frosted" alt="Frosted Glass">
-            <img src="https://via.placeholder.com/500x800/FFF/000?text=Decorative" class="door-feature" id="glass-decorative" alt="Decorative Glass">
-            <img src="https://via.placeholder.com/500x800/000/FFF?text=Peephole" class="door-feature" id="peephole" alt="Peephole">
-            <img src="https://via.placeholder.com/500x800/000/FFF?text=Mail+Slot" class="door-feature" id="mail-slot" alt="Mail Slot">
-            <img src="https://via.placeholder.com/500x800/000/FFF?text=Smart+Lock" class="door-feature" id="smart-lock" alt="Pull Handle">
-            <img src="https://via.placeholder.com/500x800/000/FFF?text=Smart+Lock" class="door-feature" id="smart-lock" alt="Smart Lock Ready">
-            <img src="https://via.placeholder.com/500x800/000/FFF?text=Smart+Lock" class="door-feature" id="smart-lock" alt="Door frame">
+            <img src="Images/brown door.png" class="door-feature" id="color-brown" alt="Brown Finish">
+            <img src="Images/black door.png" class="door-feature" id="color-black" alt="Black Finish">
+            <img src="Images/green door.png" class="door-feature" id="color-gray" alt="Gray Finish">
+            <img src="Images/white-door.png" class="door-feature" id="color-white" alt="White Finish">
+
+            <img src="https://via.placeholder.com/500x800/000/FFF?text=Multi-Lock" class="door-feature" id="multi-lock"
+                alt="Multi-Point Locking">
+            <img src="https://via.placeholder.com/500x800/000/FFF?text=Anti-Drill" class="door-feature" id="anti-drill"
+                alt="Anti-Drill Plates">
+            <img src="https://via.placeholder.com/500x800/000/FFF?text=Reinforced" class="door-feature" id="reinforced"
+                alt="Reinforced Hinges">
+            <img src="Images/20250505_151108.png" class="door-feature" id="glass-clear" alt="Clear Glass">
+            <img src="Images/long-frosted-glass.png" class="door-feature" id="glass-frosted" alt="Frosted Glass">
+            <img src="Images/long-tinted-glass.png" class="door-feature" id="glass-decorative" alt="Decorative Glass">
+            <img src="Images/short-tinted-glass.png" class="door-feature" id="glass-shinted" alt="Short Tinted Glass">
+            <img src="Images/short-clear-glass.png" class="door-feature" id="glass-shear" alt="Short clear Glass">
+            <img src="Images/short-frosted-glass.png" class="door-feature" id="glass-shosted" alt="Short frosted Glass">
+            <img src="Images/peephole.png" class="door-feature" id="peephole" alt="Peephole">
+            <img src="Images/mail slot.png" class="door-feature" id="mail-slot" alt="Mail Slot">
+            <img src="Images/pull handle.png" class="door-feature" id="pull-handle" alt="Pull Handle">
+            <img src="Images/smart-handle.png" class="door-feature" id="smart-lock" alt="Smart Lock Ready">
+            <img src="Images/black frame.png" class="door-feature" id="door-frame" alt="Door frame">
         </div>
-      
-        
+
+
         <div class="selected-features">
             <h3>Your Custom Features</h3>
             <ul class="feature-list" id="featureList">
                 <li>Flush High Density fibre Doors</li>
             </ul>
         </div>
-        
+
         <button class="btn btn-primary">Get a Quote</button>
     </main>
 
@@ -398,17 +416,17 @@
         const menuBtn = document.getElementById('menuBtn');
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('sidebarOverlay');
-        
+
         menuBtn.addEventListener('click', () => {
             sidebar.classList.toggle('active');
             overlay.style.display = sidebar.classList.contains('active') ? 'block' : 'none';
         });
-        
+
         overlay.addEventListener('click', () => {
             sidebar.classList.remove('active');
             overlay.style.display = 'none';
         });
-        
+
         // Price calculation and feature tracking
         const priceData = {
             base: 599,
@@ -435,24 +453,24 @@
                 'smart-lock': 200
             }
         };
-        
+
         let currentPrice = priceData.base;
         let selectedFeatures = ['Basic Steel Door'];
-        
+
         // Update the door display and price
         function updateDoor() {
             // Update price display
             document.getElementById('priceDisplay').textContent = `Total Price: £${currentPrice}`;
-            
+
             // Update feature list
             const featureList = document.getElementById('featureList');
             featureList.innerHTML = '';
-            
+
             // Add model first
             const modelSelect = document.getElementById('door-model');
             const modelName = modelSelect.options[modelSelect.selectedIndex].text;
             featureList.innerHTML += `<li>${modelName}</li>`;
-            
+
             // Add other features
             selectedFeatures.forEach(feature => {
                 if (!feature.includes('Door')) { // Skip the model name if it's already added
@@ -462,73 +480,74 @@
                 }
             });
         }
-        
+
         // Door model selection
-        document.getElementById('door-model').addEventListener('change', function() {
+        document.getElementById('door-model').addEventListener('change', function () {
             const model = this.value;
             const modelName = this.options[this.selectedIndex].text;
-            
-            // Update base image (in a real implementation, you'd have different base images)
-            document.getElementById('baseDoor').src = `https://via.placeholder.com/500x800/DDD/CCC?text=${modelName.replace(' ', '+')}`;
+            const baseImage = this.options[this.selectedIndex].getAttribute('data-base');
+
+            // Update base image
+            document.getElementById('baseDoor').src = baseImage;
             document.getElementById('baseDoor').alt = modelName;
-            
+
             // Update price
             currentPrice = priceData.base + priceData.models[model];
-            
+
             // Update features list (remove old model, add new)
             selectedFeatures = selectedFeatures.filter(item => !item.includes('Door'));
             selectedFeatures.unshift(modelName);
-            
+
             updateDoor();
         });
-        
+
         // Color selection
         document.querySelectorAll('.color-option').forEach(option => {
-            option.addEventListener('click', function() {
+            option.addEventListener('click', function () {
                 // Update active color
                 document.querySelectorAll('.color-option').forEach(opt => {
                     opt.classList.remove('selected');
                 });
                 this.classList.add('selected');
-                
+
                 // Get selected color
                 const color = this.getAttribute('data-color');
                 const featureId = this.getAttribute('data-feature');
-                
+
                 // Hide all color features first
                 document.querySelectorAll('.door-feature[id^="color-"]').forEach(feature => {
                     feature.classList.remove('active');
                 });
-                
+
                 // Show selected color
                 document.getElementById(featureId).classList.add('active');
-                
+
                 // Update price
-                const previousColor = selectedFeatures.find(item => 
-                    item.includes('Brown') || item.includes('Black') || 
+                const previousColor = selectedFeatures.find(item =>
+                    item.includes('Brown') || item.includes('Black') ||
                     item.includes('Gray') || item.includes('White')
                 );
-                
+
                 if (previousColor) {
                     const prevColorName = previousColor.split(' ')[0].toLowerCase();
                     currentPrice -= priceData.colors[prevColorName];
                     selectedFeatures = selectedFeatures.filter(item => item !== previousColor);
                 }
-                
+
                 currentPrice += priceData.colors[color];
-                
+
                 // Update features list
                 selectedFeatures.push(`${color.charAt(0).toUpperCase() + color.slice(1)} Finish`);
                 updateDoor();
             });
         });
-        
+
         // Feature checkboxes
         document.querySelectorAll('.feature-checkboxes input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
+            checkbox.addEventListener('change', function () {
                 const feature = this.getAttribute('data-feature');
                 const featureName = this.parentElement.textContent.trim();
-                
+
                 if (this.checked) {
                     // Add feature
                     document.getElementById(feature).classList.add('active');
@@ -540,43 +559,44 @@
                     currentPrice -= priceData.features[feature];
                     selectedFeatures = selectedFeatures.filter(item => item !== featureName);
                 }
-                
+
                 updateDoor();
             });
         });
-        
+
         // Glass selection
-        document.getElementById('glass-type').addEventListener('change', function() {
+        document.getElementById('glass-type').addEventListener('change', function () {
             const glassType = this.value;
             const glassName = this.options[this.selectedIndex].text;
-            
+
             // Hide all glass features first
             document.querySelectorAll('.door-feature[id^="glass-"]').forEach(feature => {
                 feature.classList.remove('active');
             });
-            
+
             // Remove any existing glass feature from price and list
-            const existingGlass = selectedFeatures.find(item => 
+            const existingGlass = selectedFeatures.find(item =>
                 item.includes('Glass')
             );
-            
+
             if (existingGlass) {
                 const glassFeature = existingGlass.toLowerCase().includes('clear') ? 'glass-clear' :
-                                    existingGlass.toLowerCase().includes('frosted') ? 'glass-frosted' :
-                                    'glass-decorative';
+                    existingGlass.toLowerCase().includes('frosted') ? 'glass-frosted' :
+                        'glass-decorative';
                 currentPrice -= priceData.features[glassFeature];
                 selectedFeatures = selectedFeatures.filter(item => item !== existingGlass);
             }
-            
+
             // Show selected glass
             if (glassType !== 'none') {
                 document.getElementById(`glass-${glassType}`).classList.add('active');
                 currentPrice += priceData.features[`glass-${glassType}`];
                 selectedFeatures.push(glassName);
             }
-            
+
             updateDoor();
         });
     </script>
 </body>
+
 </html>
